@@ -35,7 +35,7 @@ export default class Car extends Component {
     handleSave = async () => {
         const { activeItem } = this.state;
         // check if activeItem is not empty
-        if (JSON.stringify(activeItem) != '{}') {
+        if (JSON.stringify(activeItem) !== '{}') {
             const { data: car } = await axios.post("http://localhost:8000/api/v1/", activeItem);
             let cars = [...this.state.cars];
             cars.splice(-1); // remove inputs row
