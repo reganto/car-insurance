@@ -1,7 +1,6 @@
+from api.v1 import views
 from django.urls import path
 
-from . import views
-
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", views.CarListView.as_view(), name="index"),
 ]

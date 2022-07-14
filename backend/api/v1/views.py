@@ -1,5 +1,8 @@
-from django.http import JsonResponse
+from api.models import Car
+from api.serializers import CarSerializer
+from rest_framework import generics
 
 
-def index(request):
-    return JsonResponse({"status": "ok"})
+class CarListView(generics.ListCreateAPIView):
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
